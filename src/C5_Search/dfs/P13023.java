@@ -1,44 +1,35 @@
 package C5_Search.dfs;
 
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.StringTokenizer;
 
-public class P11724 {
+public class P13023 {
     static ArrayList<Integer>[] graph;
     static boolean[] visited;
+    static int count = 0;
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         int n = sc.nextInt();
         int m = sc.nextInt();
 
         graph = new ArrayList[n+1];
         visited = new boolean[n+1];
 
-        for(int i=1; i<n+1; i++){
+        for(int i =0; i<n; i++){
             graph[i] = new ArrayList();
         }
 
-        for(int i =1; i<m+1; i++){
+        for(int i =0; i<m; i++){
             int s = sc.nextInt();
             int e = sc.nextInt();
             graph[s].add(e);
             graph[e].add(s);
         }
-        int count =0;
-        for(int i = 1; i<n+1; i++){
-            if(!visited[i]){
-                count++;
-                dfs(i);
 
-            }
+        for(int i =0; i<n; i++){
+            count = 1;
+            dfs(i);
         }
-        System.out.println(count);
     }
 
     static void dfs(int v){
@@ -48,8 +39,14 @@ public class P11724 {
         visited[v] = true;
         for(int i : graph[v]){
             if(!visited[i]){
+                count++;
+                if(count>=5){
+                    System.out.println("1");
+                    return;
+                }
                 dfs(i);
             }
         }
     }
+
 }
