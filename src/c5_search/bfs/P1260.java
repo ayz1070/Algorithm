@@ -1,4 +1,5 @@
-package C5_Search.bfs;
+package c5_search.bfs;
+
 
 import java.util.*;
 

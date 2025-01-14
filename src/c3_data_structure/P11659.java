@@ -1,4 +1,4 @@
-package C3_DataStructure;
+package c3_data_structure;
 
 import java.util.Scanner;
 

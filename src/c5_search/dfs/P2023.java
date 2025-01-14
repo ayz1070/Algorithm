@@ -1,4 +1,4 @@
-package C5_Search.dfs;
+package c5_search.dfs;
 
 import java.util.Scanner;
 
