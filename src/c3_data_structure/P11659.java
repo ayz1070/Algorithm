@@ -7,16 +7,29 @@ public class P11659 {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int m = sc.nextInt();
-        int[] s = new int[n+1];
-        s[0] = 0;
-        for(int i =1; i<n+1; i++){
-            s[i] = s[i-1] + sc.nextInt();
+
+        int[] sums = new int[n];
+
+        for(int i =0; i<n; i++){
+            int num = sc.nextInt();
+            if(i==0){
+                sums[i] = num;
+            }else{
+                sums[i] = sums[i-1] + num;
+            }
+
         }
 
-        for(int k =0; k<m; k++){
-            int start = sc.nextInt();
-            int end = sc.nextInt();
-            System.out.println(s[end]-s[start-1]);
+
+        for(int k =1; k<=m; k++){
+            int i = sc.nextInt();
+            int j = sc.nextInt();
+
+            if(i==1){
+                System.out.println(sums[j-1]);
+            }else{
+                System.out.println(sums[j-1]-sums[i-2]);
+            }
         }
     }
 }
