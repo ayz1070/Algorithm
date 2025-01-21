@@ -4,25 +4,24 @@ import java.util.Scanner;
 
 public class P2018 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int[] s = new int[n+1];
-        s[0] = 0;
-        for(int i =1; i<n+1; i++){
-            s[i] = s[i-1] + i;
-        }
+        Scanner sc= new Scanner(System.in);
+        int n= sc.nextInt();
+        int s =1;
+        int e =1;
+        int sum=1;
+        int count=1;
 
-        int count = 1;
-        int start = 1;
-        int end = 1;
-        while(end<=n){
-            if(s[end]-s[start]<n){
-                end++;
-            }else if(s[end]-s[start]>n){
-                start++;
-            }else if(s[end]-s[start]==n){
+        while(e != n){
+            if(n==sum){
+                e++;
+                sum=sum+e;
                 count++;
-                start++;
+            }else if(n<sum){
+                sum-=s;
+                s++;
+            }else if(n>sum){
+                e++;
+                sum+=e;
             }
         }
         System.out.println(count);
