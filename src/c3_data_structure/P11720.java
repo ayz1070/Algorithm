@@ -10,8 +10,8 @@ public class P11720 {
         int sum = 0;
 
         for(int i = 0; i<n; i++){
-            //sum += nStr.charAt(i) -'0';
-            sum += Integer.parseInt(String.valueOf(nStr.charAt(i)));
+            sum += nStr.charAt(i) -'0';
+            //sum += Integer.parseInt(String.valueOf(nStr.charAt(i)));
         }
 
         System.out.println(sum);
