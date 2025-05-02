@@ -1,6 +1,5 @@
 package c5_search.dfs;
 
-
 import java.util.Scanner;
 
 public class P2023_2 {
