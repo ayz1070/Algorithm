@@ -54,7 +54,7 @@ public class P1260_4 {
 
     public static void bfs(int node){
         // 큐 초기화 및 첫 노드 삽입
-        Queue<Integer> queue = new LinkedList<Integer>();
+        Queue<Integer> queue = new LinkedList<>();
         queue.add(node);
         visited[node] = true;
 
@@ -62,15 +62,15 @@ public class P1260_4 {
         // 3. 큐가 빌 때까지 반복하기
         while(!queue.isEmpty()){
             int now = queue.poll();
-            System.out.print(now + " ");
-            // 큐에서 꺼낸 노드의 인접 노드를 다시 큐에 삽입
+            System.out.print(now);
             for(int i : arr[now]){
                 if(!visited[i]){
-                    visited[i] = true;
                     queue.add(i);
+                    visited[i] = true;
                 }
             }
         }
+
     }
 }
 
